@@ -19,9 +19,9 @@ public partial class OpenAIClient
     //   This file is the central hub of .NET client customization for Azure OpenAI.
 
     private const string PublicOpenAIApiVersion = "1";
-    private const string PublicOpenAIEndpoint = $"https://api.openai.com/v{PublicOpenAIApiVersion}";
+    protected const string PublicOpenAIEndpoint = $"https://api.openai.com/v{PublicOpenAIApiVersion}";
 
-    private bool _isConfiguredForAzureOpenAI = true;
+    protected bool _isConfiguredForAzureOpenAI = true;
 
     /// <summary>
     ///     Initializes a instance of OpenAIClient for use with an Azure OpenAI resource.
@@ -980,7 +980,7 @@ public partial class OpenAIClient
         return message;
     }
 
-    private static TokenCredential CreateDelegatedToken(string token)
+    public static TokenCredential CreateDelegatedToken(string token)
     {
         var accessToken = new AccessToken(token, DateTimeOffset.Now.AddDays(180));
         return DelegatedTokenCredential.Create((_, _) => accessToken);
