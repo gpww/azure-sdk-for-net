@@ -24,9 +24,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Core" VersionOverride="1.39.0" />
+    <PackageReference Include="Azure.Core"/>
     <PackageReference Include="System.ClientModel" />
-    <PackageReference Include="System.Text.Json" VersionOverride="8.0.3" />
+    <PackageReference Include="System.Text.Json" />
   </ItemGroup>
 
   <!-- Shared source from Azure.Core -->
