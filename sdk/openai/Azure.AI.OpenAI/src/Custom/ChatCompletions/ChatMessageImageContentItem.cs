@@ -12,6 +12,11 @@ public partial class ChatMessageImageContentItem : ChatMessageContentItem
     //   - Hide the ImageUrl property for easier, direct use of the content item
     //   - Provide custom Uri, BinaryData, and Stream constructors
 
+    public ChatMessageImageContentItem(string imageUri)
+        : this(new ChatMessageImageUrl(imageUri))
+    {
+    }
+
     internal ChatMessageImageUrl ImageUrl { get; }
 
     /// <summary>

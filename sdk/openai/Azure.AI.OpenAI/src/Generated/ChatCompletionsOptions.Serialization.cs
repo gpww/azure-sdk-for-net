@@ -28,6 +28,11 @@ namespace Azure.AI.OpenAI
             using JsonDocument document = JsonDocument.ParseValue(ref reader);
             return DeserializeChatCompletionsOptions(document.RootElement, options);
         }
+        public static ChatCompletionsOptions DeserializeChatCompletionsOptions(string element)
+        {
+            using var document = JsonDocument.Parse(element);
+            return DeserializeChatCompletionsOptions(document.RootElement);
+        }
 
         internal static ChatCompletionsOptions DeserializeChatCompletionsOptions(JsonElement element, ModelReaderWriterOptions options = null)
         {

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>
       Azure's official .NET library for OpenAI inference that supports Completions, Chat, and Embeddings.
@@ -13,12 +13,13 @@
     <NoWarn>$(NoWarn);CS1591;AZC0012</NoWarn>
     <IncludeOperationsSharedSource>true</IncludeOperationsSharedSource>
     <LangVersion>latest</LangVersion>
+    <RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Core" />
+    <PackageReference Include="Azure.Core" VersionOverride="1.39.0" />
     <PackageReference Include="System.ClientModel" />
-    <PackageReference Include="System.Text.Json" />
+    <PackageReference Include="System.Text.Json" VersionOverride="8.0.3" />
   </ItemGroup>
 
   <!-- Shared source from Azure.Core -->
@@ -31,5 +32,21 @@
 
   <ItemGroup>
     <None Include="..\tsp-location.yaml" Link="tsp-location.yaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.CodeAnalysis.BannedApiAnalyzers" Version="3.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="SauceControl.InheritDoc" Version="2.0.1" />
   </ItemGroup>
 </Project>

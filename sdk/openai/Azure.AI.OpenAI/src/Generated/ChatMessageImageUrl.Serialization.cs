@@ -27,7 +27,7 @@ namespace Azure.AI.OpenAI
 
             writer.WriteStartObject();
             writer.WritePropertyName("url"u8);
-            writer.WriteStringValue(Url);
+            writer.WriteStringValue(this.ToString());
             if (Optional.IsDefined(Detail))
             {
                 writer.WritePropertyName("detail"u8);

@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
@@ -257,6 +258,9 @@ public partial class ChatCompletionsOptions
         StopSequences = new ChangeTrackingList<string>();
         InternalAzureExtensionsDataSources = new ChangeTrackingList<AzureChatExtensionConfiguration>();
         Tools = new ChangeTrackingList<ChatCompletionsToolDefinition>();
+
+        _jsonWriter = new Utf8JsonWriter(_memoryStream);
+        _streamReader = new StreamReader(_memoryStream);
     }
 
     // CUSTOM CODE NOTE:

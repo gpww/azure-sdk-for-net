@@ -36,6 +36,9 @@ namespace Azure.Core.Sse
                             break;
                         }
                         using JsonDocument sseMessageJson = JsonDocument.Parse(value);
+                        ////log下 value
+                        //Console.WriteLine(value.ToString());
+                        //Console.WriteLine();
                         IEnumerable<T> newItems = multiElementDeserializer.Invoke(sseMessageJson.RootElement);
                         foreach (T item in newItems)
                         {

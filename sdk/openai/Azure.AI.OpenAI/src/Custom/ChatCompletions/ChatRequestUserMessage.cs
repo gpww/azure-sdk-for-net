@@ -51,6 +51,8 @@ public partial class ChatRequestUserMessage : ChatRequestMessage
     /// </exception>
     public ChatRequestUserMessage(string content)
     {
+        if (string.IsNullOrWhiteSpace(content))
+            content = "empty";
         Argument.AssertNotNullOrEmpty(content, nameof(content));
         Role = ChatRole.User;
         Content = content;

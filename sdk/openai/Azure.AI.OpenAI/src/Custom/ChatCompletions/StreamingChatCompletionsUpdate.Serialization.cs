@@ -21,7 +21,11 @@ public partial class StreamingChatCompletionsUpdate
         {
             return new();
         }
-
+        ////检查 element 有没有 usage属性，如果有，打印
+        //if (element.TryGetProperty("usage", out JsonElement usage))
+        //{
+        //    Console.WriteLine(usage);
+        //}
         string id = default;
         string model = default;
         DateTimeOffset created = default;
@@ -207,7 +211,7 @@ public partial class StreamingChatCompletionsUpdate
             {
                 if (deltaProperty.NameEquals("role"u8))
                 {
-                    result.Role = deltaProperty.Value.GetString();
+                    result.Role = string.IsNullOrEmpty(deltaProperty.Value.GetString()) ? "system" : deltaProperty.Value.GetString();
                     continue;
                 }
                 if (deltaProperty.NameEquals("name"u8))
