@@ -15,17 +15,15 @@ internal partial class ChatMessageImageUrl
     /// <summary> The URL of the image. </summary>
     public string Url { get; }
 
-    public ChatMessageImageUrl(Uri uri, ChatMessageImageDetailLevel? detailLevel)
+    public ChatMessageImageUrl(string uri, ChatMessageImageDetailLevel? detailLevel) : this(uri, detailLevel, null)
     {
-        Url = uri.AbsoluteUri;
-        Detail = detailLevel;
     }
 
     public ChatMessageImageUrl(BinaryData bytes, string mimeType, ChatMessageImageDetailLevel? detailLevel)
     {
         string base64ImageData = Convert.ToBase64String(bytes.ToArray());
         Url = $"data:{mimeType};base64,{base64ImageData}";
-        Detail = detailLevel;
+        Detail = detailLevel ?? ChatMessageImageDetailLevel.Auto;
     }
 
     public ChatMessageImageUrl(Stream stream, string mimeType, ChatMessageImageDetailLevel? detailLevel)

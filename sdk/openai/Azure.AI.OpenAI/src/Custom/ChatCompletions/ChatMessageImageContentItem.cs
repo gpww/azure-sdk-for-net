@@ -30,7 +30,7 @@ public partial class ChatMessageImageContentItem : ChatMessageContentItem
     /// <param name="detailLevel"> The image detail level the model should use when evaluating the image. </param>
     /// <exception cref="ArgumentNullException"> <paramref name="imageUri"/> is null. </exception>
     public ChatMessageImageContentItem(Uri imageUri, ChatMessageImageDetailLevel? detailLevel = null)
-        : this(new ChatMessageImageUrl(imageUri, detailLevel))
+        : this(new ChatMessageImageUrl(imageUri.AbsoluteUri, detailLevel))
     {}
 
     /// <summary>

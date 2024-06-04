@@ -48,11 +48,8 @@ namespace Azure.AI.OpenAI
         /// <summary> Initializes a new instance of <see cref="ChatMessageImageUrl"/>. </summary>
         /// <param name="url"> The URL of the image. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="url"/> is null. </exception>
-        public ChatMessageImageUrl(string url)
+        public ChatMessageImageUrl(string url) : this(url, null)
         {
-            Argument.AssertNotNull(url, nameof(url));
-
-            Url = url;
         }
 
         /// <summary> Initializes a new instance of <see cref="ChatMessageImageUrl"/>. </summary>
@@ -65,7 +62,7 @@ namespace Azure.AI.OpenAI
         internal ChatMessageImageUrl(string url, ChatMessageImageDetailLevel? detail, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
             Url = url;
-            Detail = detail;
+            Detail = detail?? ChatMessageImageDetailLevel.Auto;
             _serializedAdditionalRawData = serializedAdditionalRawData;
         }
 
