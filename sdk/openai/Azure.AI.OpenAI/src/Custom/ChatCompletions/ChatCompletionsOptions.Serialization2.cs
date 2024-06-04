@@ -3,8 +3,11 @@
 
 #nullable disable
 
+using System;
+using System.ClientModel.Primitives;
 using System.IO;
 using System.Text.Json;
+using Azure.Core;
 
 namespace Azure.AI.OpenAI;
 

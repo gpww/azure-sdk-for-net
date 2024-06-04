@@ -980,7 +980,7 @@ public partial class OpenAIClient
         return message;
     }
 
-    protected static TokenCredential CreateDelegatedToken(string token)
+    public static TokenCredential CreateDelegatedToken(string token)
     {
         var accessToken = new AccessToken(token, DateTimeOffset.Now.AddDays(180));
         return DelegatedTokenCredential.Create((_, _) => accessToken);
