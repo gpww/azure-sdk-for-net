@@ -18,6 +18,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Custom\ChatCompletions%28delete%29\ChatCompletionsOptions.Serialization2.cs" />
+    <Compile Remove="Custom\ChatCompletions%28delete%29\ChatMessageImageContentItem.cs" />
+    <Compile Remove="Custom\ChatCompletions%28delete%29\ChatMessageImageUrl.cs" />
+    <Compile Remove="Custom\ChatCompletions%28delete%29\ChatRequestUserMessage.cs" />
+    <Compile Remove="Custom\ChatCompletions%28delete%29\StreamingChatCompletionsUpdate.Serialization.cs" />
+    <Compile Remove="Custom\ChatCompletions(delete)\ChatCompletionsOptions.cs" />
+    <Compile Remove="Custom\OpenAIClient(delete).cs" />
+    <Compile Remove="Generated\ChatCompletionsOptions.Serialization(delete).cs" />
+    <Compile Remove="Helpers\SseAsyncEnumerator(delete).cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Custom\ChatCompletions%28delete%29\ChatCompletionsOptions.cs" />
+    <None Include="Custom\ChatCompletions%28delete%29\ChatCompletionsOptions.Serialization2.cs" />
+    <None Include="Custom\ChatCompletions%28delete%29\ChatMessageImageContentItem.cs" />
+    <None Include="Custom\ChatCompletions%28delete%29\ChatMessageImageUrl.cs" />
+    <None Include="Custom\ChatCompletions%28delete%29\ChatRequestUserMessage.cs" />
+    <None Include="Custom\ChatCompletions%28delete%29\StreamingChatCompletionsUpdate.Serialization.cs" />
+    <None Include="Custom\OpenAIClient%28delete%29.cs" />
+    <None Include="Generated\ChatCompletionsOptions.Serialization%28delete%29.cs" />
+    <None Include="Helpers\SseAsyncEnumerator%28delete%29.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Azure.Core" />
     <PackageReference Include="OpenAI" VersionOverride="2.0.0-*" />
   </ItemGroup>
